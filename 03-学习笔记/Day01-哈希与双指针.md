@@ -1,43 +1,48 @@
-# Day 1 · 哈希与双指针
+# Day 01 · 哈希与双指针
 
-> **日期：** 2026-__-__
-> **学习目标：** 哈希表的使用技巧与双指针的经典模式
+> **日期：** 2026-07-24  
+> **学习目标：** 哈希表的 Map/Set 使用技巧与双指针经典模式  
+> **默认语言：** JavaScript（TypeScript 只作类型辅助）  
 > **相关知识页：** [[02-Wiki/专题总结/01-哈希表]] · [[02-Wiki/专题总结/02-双指针与滑动窗口]]
 
 ---
 
-## 一、今日模板回顾
+## 一、今日 JS/TS 模板回顾
 
-### 哈希表
-```python
-# 模板速记：值 → 索引映射
-seen = {}
-for i, num in enumerate(nums):
-    if target - num in seen:
-        return [seen[target - num], i]
-    seen[num] = i
+### 哈希表：值 → 下标映射
+```js
+const seen = new Map();
+
+for (let i = 0; i < nums.length; i++) {
+  const need = target - nums[i];
+  if (seen.has(need)) return [seen.get(need), i];
+  seen.set(nums[i], i);
+}
 ```
 
 ### 双指针（对撞）
-```python
-left, right = 0, len(nums) - 1
-while left < right:
-    if nums[left] + nums[right] == target:
-        return [left, right]
-    elif nums[left] + nums[right] < target:
-        left += 1
-    else:
-        right -= 1
+```js
+let left = 0;
+let right = nums.length - 1;
+
+while (left < right) {
+  const sum = nums[left] + nums[right];
+  if (sum === target) return [left, right];
+  if (sum < target) left++;
+  else right--;
+}
 ```
 
 ### 双指针（快慢）
-```python
-slow = fast = 0
-while fast < len(nums):
-    if nums[fast] != 0:
-        nums[slow], nums[fast] = nums[fast], nums[slow]
-        slow += 1
-    fast += 1
+```js
+let slow = 0;
+
+for (let fast = 0; fast < nums.length; fast++) {
+  if (nums[fast] !== 0) {
+    [nums[slow], nums[fast]] = [nums[fast], nums[slow]];
+    slow++;
+  }
+}
 ```
 
 ---
@@ -45,52 +50,101 @@ while fast < len(nums):
 ## 二、做题记录
 
 ### 1. 两数之和（Easy）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 2. 字母异位词分组（Medium）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 3. 最长连续序列（Medium）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 4. 移动零（Easy）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 5. 盛最多水的容器（Medium）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 6. 三数之和（Medium）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ### 7. 接雨水（Hard）
+- **是否独立做出：** 独立 / 看提示 / 看题解
+- **题型/模板：**
 - **核心思路：**
-- **代码实现：**
+- **JavaScript 实现：**
+```js
+
+```
 - **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
+- **JS 写法注意点：**
+- **从 Python 题解转写时的差异：**
+- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
 - **感悟/易错点：**
 
 ---
@@ -101,6 +155,9 @@ while fast < len(nums):
 -
 
 **遇到的困难：**
+-
+
+**需要加入 JS/TS 模板库的内容：**
 -
 
 **遗留问题（需复习）：**
