@@ -4,8 +4,8 @@
   "title": "Respond to greeting",
   "titleGenerationStatus": "success",
   "createdAt": 1784818422486,
-  "updatedAt": 1784886133184,
-  "lastResponseAt": 1784886133184,
+  "updatedAt": 1784904903974,
+  "lastResponseAt": 1784904903974,
   "sessionId": "22ceac80-79f5-43ae-9444-6f76e08a1472",
   "selectedModel": "haiku",
   "providerState": {
@@ -13,12 +13,12 @@
   },
   "usage": {
     "model": "haiku",
-    "inputTokens": 6248,
+    "inputTokens": 1793,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 68096,
+    "cacheReadInputTokens": 78336,
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
-    "contextTokens": 74344,
-    "percentage": 37
+    "contextTokens": 80129,
+    "percentage": 40
   }
 }
