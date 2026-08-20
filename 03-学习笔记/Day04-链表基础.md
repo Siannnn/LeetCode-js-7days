@@ -39,17 +39,28 @@ return dummy.next;
 ## 二、做题记录
 
 ### 链表翻转（三指针）
-- **是否独立做出：** 独立 / 看提示 / 看题解
+- **是否独立做出：**  看题解
 - **题型/模板：**
-- **核心思路：**
+- **核心思路：** 三指针，pre、curr、tmp，curr的下一个指向pre，然后更新curr和pre的位置
 - **JavaScript 实现：**
 ```js
+var reverseList = function(head) {
+    let pre=null,curr=head;
 
+    while(curr){
+        const tmp=curr.next;
+        curr.next=pre;
+        pre=curr;
+        curr=tmp;
+    }
+
+   return pre;
+};
 ```
 - **复杂度：** O(__) / O(__)
 - **JS 写法注意点：**
 - **从 Python 题解转写时的差异：**
-- **掌握程度：** ✅ 熟练 / 🔄 需复习 / ❌ 未掌握
+- **掌握程度：** 🔄 需复习 
 - **感悟/易错点：**
 
 ### 1. 相交链表（Easy）
